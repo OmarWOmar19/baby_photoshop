@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../../lib/Image_Class.h"
 #include "../../defs/defs.h"
 

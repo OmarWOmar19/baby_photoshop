@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../../lib/Image_Class.h"
 
 void show_darken_and_lighten_menu();

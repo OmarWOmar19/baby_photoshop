@@ -1,9 +1,11 @@
 #include "../../include/filters/blur_image.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 void horizontal_blur(Image& current_image, int radius) {
+
     for (int j = 0; j < current_image.height; j++) {
         for (int i = 0; i < current_image.width; i++) {
             int sumR = 0, sumG = 0, sumB = 0;
@@ -23,9 +25,11 @@ void horizontal_blur(Image& current_image, int radius) {
             current_image(i, j, 2) = sumB / count;
         }
     }
+
 }
 
 void vertical_blur(Image& current_image, int radius) {
+
     for (int j = 0; j < current_image.height; j++) {
         for (int i = 0; i < current_image.width; i++) {
             int sumR = 0, sumG = 0, sumB = 0;
@@ -45,6 +49,7 @@ void vertical_blur(Image& current_image, int radius) {
             current_image(i, j, 2) = sumB / count;
         }
     }
+
 }
 
 void blur_image(Image& current_image) {

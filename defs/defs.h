@@ -15,7 +15,7 @@ enum class en_filters_menu {
     ROTATE_IMAGE = 6,
     DARKEN_AND_LIGHTEN = 7, //
     RESIZING_IMAGE = 8,
-    MERGE_PHOTOS = 9,
+    MERGE_IMAGES = 9,
     DETECT_EDGES = 10,
     CROP_IMAGE = 11, // 
     BLUR_IMAGE = 12,

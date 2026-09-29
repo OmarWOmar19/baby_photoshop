@@ -22,6 +22,8 @@ void resize_image(Image& current_image, int new_width, int new_height) {
         }
     }
 
+    current_image = new_image;
+
 }
 
 void show_resize_image_menu(Image& current_image) {
@@ -32,10 +34,10 @@ void show_resize_image_menu(Image& current_image) {
     cout << "\t\t\tResize Image\n";
     cout << "========================================================\n";
 
-    cout << " --> New Width: " << endl;
+    cout << " --> New Width: ";
     cin >> new_width;
 
-    cout << " --> New Height: " << endl;
+    cout << " --> New Height: ";
     cin >> new_height;
 
     resize_image(current_image, new_width, new_height);

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../../lib/Image_Class.h"
 
 void show_rotate_image_menu();

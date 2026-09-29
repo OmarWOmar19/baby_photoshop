@@ -1,12 +1,9 @@
 #pragma once
 
+#include "../../defs/defs.h"
 #include <string>
-#include <vector>
-
-#include "../../lib/Image_Class.h"
 
 using namespace std;
 
-string read_image_path();
-string read_image_name();
-string read_image_extension();
+bool save_image(Image &current_image, const string &image_name, const string &image_extention, const string &image_path);
+bool load_image(const string &image_path, Image &current_image);
