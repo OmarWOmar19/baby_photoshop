@@ -6,7 +6,6 @@
 #include "../../include/ui/menu.h"
 #include "../../include/core/file-manager.h"
 #include "../../include/core/image-manager.h"
-
 #include "../filters/filters_unity.cpp"
 
 using namespace std;
@@ -110,7 +109,7 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
 
         case en_filters_menu::MERGE_IMAGES:
             system("cls");
-            // merge_images(current_image);
+            merge_images(current_image);
             system("pause");
             break;
 
@@ -138,6 +137,12 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
             system("pause");
             break;
 
+        case en_filters_menu::DETECT_EDGES:
+            system("cls");
+            // detect_image_edges(current_image);
+            system("pause");
+            break;
+
         default:
             ;
 
@@ -160,7 +165,7 @@ void show_apply_filter_menu(Image& current_image) {
         system("cls");
 
         cout << "========================================================\n";
-        cout << "\tApply filter\n";
+        cout << "\t\t\tApply filter\n";
         cout << "========================================================\n";
 
         cout << " [1] Grayscale conversion" << "\n";

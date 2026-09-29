@@ -62,4 +62,6 @@ void blur_image(Image& current_image) {
     vertical_blur(current_image, radius);
     horizontal_blur(current_image, radius);
 
+    cout << "Filter has successfully been applied!!!\n";
+
 }

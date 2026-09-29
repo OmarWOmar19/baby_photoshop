@@ -18,4 +18,6 @@ void infrared(Image& current_image){
         }
     }
 
+    cout << "Filter has successfully been applied!!!\n";
+
 }

@@ -18,12 +18,12 @@ string read_image_name() {
 
 string read_image_extension() {
 
-    string image_extention = "";
+    string image_extension = "";
 
-    cout << "Image Extention: ";
-    getline(cin >> ws, image_extention);
+    cout << "Image Extension: ";
+    getline(cin >> ws, image_extension);
 
-    return image_extention;
+    return image_extension;
 
 }
 

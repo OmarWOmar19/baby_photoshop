@@ -42,4 +42,6 @@ void show_resize_image_menu(Image& current_image) {
 
     resize_image(current_image, new_width, new_height);
 
+    cout << "Filter has successfully been applied!!!\n";
+
 }
