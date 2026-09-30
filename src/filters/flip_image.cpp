@@ -1,4 +1,7 @@
 #include "../../include/filters/flip_image.h"
+#include "../../include/core/validation.h"
+#include "../../include/ui/output.h"
+
 #include <iostream>
 
 using namespace std;
@@ -54,10 +57,7 @@ void flip_image(Image& current_image) {
 
     show_flip_image_menu();
 
-    short choice = 1;
-
-    cout << "Enter a choice: ";
-    cin >> choice;
+    short choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
 
     switch (choice) {
 
@@ -71,6 +71,6 @@ void flip_image(Image& current_image) {
 
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

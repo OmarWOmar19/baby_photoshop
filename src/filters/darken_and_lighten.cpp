@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../../include/filters/darken_and_lighten.h"
+#include "../../include/ui/output.h"
 
 using namespace std;
 
@@ -18,23 +19,18 @@ void darken_and_lighten(Image& current_image) {
 
     show_darken_and_lighten_menu();
 
-    short choice = 1;
+    short choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
     short brightness_percentage = 0;
-
-    cout << "Enter a choice: ";
-    cin >> choice;
 
     switch (choice) {
 
         case 1:
-            cout << "Dark percentage %: ";
-            cin >> brightness_percentage;
+            brightness_percentage = read_number("Dark percentage %: ");
             brightness_percentage = -brightness_percentage;
             break;
 
         case 2:
-            cout << "Light percentage %: ";
-            cin >> brightness_percentage;
+            brightness_percentage = read_number("Light percentage %: ");   
             break;
 
         default:
@@ -62,6 +58,6 @@ void darken_and_lighten(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

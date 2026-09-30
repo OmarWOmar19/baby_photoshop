@@ -1,4 +1,5 @@
 #include "../../include/filters/natural_sunlight.h"
+#include "../../include/ui/output.h"
 
 void natural_sunlight(Image& current_image) {
 
@@ -28,6 +29,6 @@ void natural_sunlight(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

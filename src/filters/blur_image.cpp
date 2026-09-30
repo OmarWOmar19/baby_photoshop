@@ -1,4 +1,7 @@
 #include "../../include/filters/blur_image.h"
+#include "../../include/core/validation.h"
+#include "../../include/ui/output.h"
+
 #include <iostream>
 #include <string>
 
@@ -54,14 +57,11 @@ void vertical_blur(Image& current_image, int radius) {
 
 void blur_image(Image& current_image) {
 
-    int radius = 0;
-
-    cout << "Enter blur radius: ";
-    cin >> radius;
+    int radius = read_number("Enter blur radius: ");
 
     vertical_blur(current_image, radius);
     horizontal_blur(current_image, radius);
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

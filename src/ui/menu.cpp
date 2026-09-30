@@ -6,6 +6,8 @@
 #include "../../include/ui/menu.h"
 #include "../../include/core/file-manager.h"
 #include "../../include/core/image-manager.h"
+#include "../../include/core/validation.h"
+
 #include "../filters/filters_unity.cpp"
 
 using namespace std;
@@ -37,7 +39,6 @@ void show_save_image_menu(Image& current_image) {
         cout << "Image has successfully been saved!!!\n";
     } else {
         is_image_saved = false;
-        system("cls");
         cout << "Error: Image hasn't been saved!!!\n";
     }
 
@@ -67,7 +68,7 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
 
         case en_filters_menu::GRAYSCALE:
             system("cls");
-            // grayscale(current_image);
+            grayscale(current_image);
             system("pause");
             break;
 
@@ -85,7 +86,7 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
 
         case en_filters_menu::NATURAL_SUNLIGHT:
             system("cls");
-            // natural_sunlight(current_image);
+            natural_sunlight(current_image);
             system("cls");
             break;
 
@@ -97,7 +98,7 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
 
         case en_filters_menu::FLIP_IMAGE:
             system("cls");
-            // flip_image(current_image);
+            flip_image(current_image);
             system("pause");
             break;
 
@@ -139,7 +140,7 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
 
         case en_filters_menu::DETECT_EDGES:
             system("cls");
-            // detect_image_edges(current_image);
+            detect_image_edges(current_image);
             system("pause");
             break;
 
@@ -155,6 +156,7 @@ void show_apply_filter_menu(Image& current_image) {
     // Check if there isn't an uploaded image yet
     if (is_image_loaded == false) {
         cout << "Error: Image isn't loaded!!!\n";
+        system("pause");
         return;
     }
 
@@ -167,16 +169,15 @@ void show_apply_filter_menu(Image& current_image) {
         cout << "========================================================\n";
         cout << "\t\t\tApply filter\n";
         cout << "========================================================\n";
-
-        cout << " [1] Grayscale conversion" << "\n";
-        cout << " [2] Black and White" << "\n";
-        cout << " [3] Invert image" << "\n";
-        cout << " [4] Adding frame" << "\n"; 
-        cout << " [5] Flip image" << "\n";
-        cout << " [6] Rotate image" << "\n"; 
-        cout << " [7] Darken and Lighten image" << "\n";
-        cout << " [8] Resizing image" << "\n";
-        cout << " [9] Merge two images" << "\n";
+        cout << " [01] Grayscale conversion" << "\n";
+        cout << " [02] Black and White" << "\n";
+        cout << " [03] Invert image" << "\n";
+        cout << " [04] Adding frame" << "\n"; 
+        cout << " [05] Flip image" << "\n";
+        cout << " [06] Rotate image" << "\n"; 
+        cout << " [07] Darken and Lighten image" << "\n";
+        cout << " [08] Resizing image" << "\n";
+        cout << " [09] Merge two images" << "\n";
         cout << " [10] Detect image edges" << "\n";
         cout << " [11] Crop image" << "\n";
         cout << " [12] Blur image" << "\n";
@@ -189,8 +190,7 @@ void show_apply_filter_menu(Image& current_image) {
         cout << " [19] Exit" << "\n";
         cout << "========================================================\n";
 
-        cout << " Enter a choice: ";
-        cin >> choice;
+        choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-19]!!!\n", 1, 19);
 
         perform_apply_filter_menu_choice((en_filters_menu)choice, current_image);
 
@@ -257,7 +257,6 @@ void perform_main_menu_choice(en_main_menu choice, Image& current_image) {
         case en_main_menu::APPLY_FILTER:
             system("cls");
             show_apply_filter_menu(current_image);
-            system("pause");
             break;
 
         case en_main_menu::SAVE_IMG:  
@@ -267,7 +266,7 @@ void perform_main_menu_choice(en_main_menu choice, Image& current_image) {
             break;
 
         default: 
-            ;
+            return;
 
     }   
 
@@ -293,8 +292,7 @@ void show_main_menu() {
         cout << "========================================================\n";
 
         // Read user choice for main menu
-        cout << " Enter a choice: ";
-        cin >> choice;
+        choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-4]!!!\n", 1, 4);
 
         perform_main_menu_choice((en_main_menu)choice, current_image);
 

@@ -1,5 +1,6 @@
 #include "../../include/filters/crop_image.h"
 #include "../../defs/defs.h"
+#include "../../include/ui/output.h"
 
 #include <iostream>
 
@@ -58,6 +59,6 @@ void crop_image(Image &current_image) {
 
     current_image = resulted_image; // Update the current image to be the croped image
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

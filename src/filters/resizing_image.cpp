@@ -1,4 +1,7 @@
 #include "../../include/filters/resizing_image.h"
+#include "../../include/core/validation.h"
+#include "../../include/ui/output.h"
+
 #include <iostream>
 
 using namespace std;
@@ -28,20 +31,14 @@ void resize_image(Image& current_image, int new_width, int new_height) {
 
 void show_resize_image_menu(Image& current_image) {
 
-    int new_width = 0, new_height = 0;
-
     cout << "========================================================\n";
     cout << "\t\t\tResize Image\n";
     cout << "========================================================\n";
 
-    cout << " --> New Width: ";
-    cin >> new_width;
-
-    cout << " --> New Height: ";
-    cin >> new_height;
+    int new_width = read_number(" --> New Width: "), new_height = read_number(" --> New Height: ");
 
     resize_image(current_image, new_width, new_height);
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

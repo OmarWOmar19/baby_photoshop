@@ -1,4 +1,5 @@
 #include "../../include/filters/old_den_den_mushi.h"
+#include "../../include/ui/output.h"
 
 void old_den_den_mushi(Image& current_image) {
 
@@ -22,6 +23,6 @@ void old_den_den_mushi(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

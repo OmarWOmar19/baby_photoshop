@@ -1,4 +1,6 @@
 #include "../../include/filters/rotate_image.h"
+#include "../../include/core/validation.h"
+#include "../../include/ui/output.h"
 
 void show_rotate_image_menu() {
 
@@ -16,10 +18,7 @@ void rotate_image(Image& current_image) {
 
     show_rotate_image_menu();
 
-    short angle = 0;
-
-    cout << "Enter an angle: ";
-    cin >> angle;
+    short angle = read_number("Enter an angle: ");
 
     if (angle == 0 || angle == 360) {
         return; 
@@ -65,6 +64,7 @@ void rotate_image(Image& current_image) {
     }
 
     current_image = target_image;
-    cout << "Filter has successfully been applied!!!\n";
+
+    successful_filter_message();
 
 }

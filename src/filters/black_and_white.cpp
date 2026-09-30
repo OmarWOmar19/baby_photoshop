@@ -1,5 +1,7 @@
 #include <iostream>
+
 #include "../../include/filters/black_and_white.h"
+#include "../../include/ui/output.h"
 
 using namespace std;
 
@@ -27,6 +29,6 @@ void black_and_white(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

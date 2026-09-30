@@ -1,7 +1,9 @@
-#include "../../include/filters/merge_images.h"
 #include "../../include/core/image-manager.h"
 #include "../../include/core/file-manager.h"
+#include "../../include/core/validation.h"
 #include "../../include/filters/resizing_image.h"
+#include "../../include/filters/merge_images.h"
+#include "../../include/ui/output.h"
 
 #include <algorithm>
 
@@ -13,9 +15,13 @@ void merge_images(Image& current_image) {
     // Load Second Image
     if (load_image(new_image_path, new_image)) {
         system("cls");
-        cout << "Successful Operation!!!\n";
+        cout << "Successful Loading!!!\n";
         system("pause");
+    } else {
+        return;
     }
+
+    system("cls");
 
     // Check if images have the same dimensions or not
     if (current_image.width != new_image.width || current_image.height != new_image.height) {
@@ -32,11 +38,8 @@ void merge_images(Image& current_image) {
 
     // merge two images operation
 
-    double blending_percentage = 50.0;
-
-    cout << "Blending Percentage [ 1% -> 100% ]: ";
-    cin >> blending_percentage;
-
+    double blending_percentage = (double)read_number("Blending Percentage [ 1% -> 100% ]: ");
+    
     if (blending_percentage < 0.0)  blending_percentage = 0.0;
     if (blending_percentage > 100.0) blending_percentage = 100.0;
     
@@ -68,6 +71,6 @@ void merge_images(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

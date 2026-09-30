@@ -1,4 +1,7 @@
 #include "../../include/filters/adding_frame.h"
+#include "../../include/core/validation.h"
+#include "../../include/ui/output.h"
+
 #include <iostream>
 
 using namespace std;
@@ -54,36 +57,29 @@ void adding_frame(Image& current_image){
 
     show_adding_frame_choices();
 
-    int choice = 1;
+    int choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
 
-    cout << "Enter a choice: ";
-    cin >> choice;
+    system("cls");
 
     switch (choice) {
-        case 1: {
-            int size = 0;
-            cout << "Enter frame size (e.g. 15): ";
-            cin >> size;
 
+        case 1: {
+            int size = read_number("Enter frame size (e.g. 15): ");
             apply_simple_frame(current_image, size);
             break;
         }
+        
         case 2: {
-            int outer = 0, inner = 0;
-
-            cout << "Enter outer frame size (e.g. 15): ";
-            cin >> outer;
-
-            cout << "Enter inner frame size (e.g. 5): ";
-            cin >> inner;
-
+            int outer = read_number("Enter outer frame size (e.g. 15): "), inner = read_number("Enter inner frame size (e.g. 5): ");
             apply_decorative_frame(current_image, outer, inner);
             break;
         }
+        
         default:
-        ;
+            ;
+
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

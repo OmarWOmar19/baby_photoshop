@@ -1,4 +1,6 @@
 #include "../../include/filters/night_purple.h"
+#include "../../include/ui/output.h"
+
 #include <iostream>
 
 using namespace std;
@@ -31,6 +33,6 @@ void night_purple(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

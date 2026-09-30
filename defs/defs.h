@@ -9,15 +9,15 @@ enum class en_filters_menu {
 
     GRAYSCALE = 1,
     BLACK_AND_WHITE = 2,
-    INVERT_IMAGE = 3, //
+    INVERT_IMAGE = 3, 
     ADDING_FRAME = 4,
     FLIP_IMAGE = 5,
     ROTATE_IMAGE = 6,
-    DARKEN_AND_LIGHTEN = 7, //
+    DARKEN_AND_LIGHTEN = 7, 
     RESIZING_IMAGE = 8,
     MERGE_IMAGES = 9,
     DETECT_EDGES = 10,
-    CROP_IMAGE = 11, // 
+    CROP_IMAGE = 11, 
     BLUR_IMAGE = 12,
     NATURAL_SUNLIGHT = 13,
     OLD_DEN_DEN_MUSHI = 14,

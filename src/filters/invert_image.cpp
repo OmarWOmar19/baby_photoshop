@@ -1,4 +1,6 @@
 #include "../../include/filters/invert_image.h"
+#include "../../include/ui/output.h"
+
 #include <iostream>
 
 using namespace std;
@@ -13,6 +15,6 @@ void invert_image(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }

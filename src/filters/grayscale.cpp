@@ -1,4 +1,5 @@
 #include "../../include/filters/grayscale.h"
+#include "../../include/ui/output.h"
 
 void grayscale(Image& current_image) {
 
@@ -20,6 +21,6 @@ void grayscale(Image& current_image) {
         }
     }
 
-    cout << "Filter has successfully been applied!!!\n";
+    successful_filter_message();
 
 }
