@@ -12,8 +12,6 @@
 
 using namespace std;
 
-vector <string> v_supported_extentions = { ".jpg", ".bmp", ".jpeg", ".png" };
-
 bool is_image_saved = false;
 bool is_image_loaded = false;
 
@@ -87,7 +85,7 @@ void perform_apply_filter_menu_choice(en_filters_menu choice, Image& current_ima
         case en_filters_menu::NATURAL_SUNLIGHT:
             system("cls");
             natural_sunlight(current_image);
-            system("cls");
+            system("pause");
             break;
 
         case en_filters_menu::OLD_DEN_DEN_MUSHI:
@@ -210,7 +208,13 @@ void show_load_image_screen(Image& current_image) {
 
         if (save_confirm == 'y' || save_confirm == 'Y') {
 
-            if (save_image(current_image, read_image_name(), read_image_extension(), read_image_path())) {
+            system("cls");
+
+            string image_name = read_image_name();
+            string image_path = read_image_path();
+            string image_extension = read_image_extension();
+
+            if (save_image(current_image, image_name, image_extension, image_path)) {
                 is_image_saved = true;
                 system("cls");
                 cout << "Image has successfully been saved!!!\n";
