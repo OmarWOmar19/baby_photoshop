@@ -1,5 +1,7 @@
 #pragma once
+
 #include "..\lib\Image_Class.h"
+#include "../include/core/validation.h"
 
 using namespace std;
 
@@ -35,11 +37,11 @@ class Point {
         int x = 0, y = 0;
 
         void read_x() {
-            cin >> x;
+            x = read_number(" --> x: ");
         }
 
         void read_y() {
-            cin >> y;
+            y = read_number(" --> y: ");
         }
 
 };

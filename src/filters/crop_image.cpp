@@ -12,10 +12,7 @@ Point read_starting_point() {
 
     cout << " Starting Point (x, y):\n";
 
-    cout << " --> x: ";
     starting_point.read_x();
-
-    cout << " --> y: ";
     starting_point.read_y();
 
     return starting_point;
@@ -26,12 +23,9 @@ Point read_ending_point() {
 
     Point ending_point;
 
-    cout << " Dimensions (x, y):\n";
+    cout << " Destination Point (x, y):\n";
 
-    cout << " --> x: ";
     ending_point.read_x();
-
-    cout << " --> y: ";
     ending_point.read_y();
 
     return ending_point;
