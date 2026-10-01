@@ -1,7 +1,7 @@
 #include "../../include/core/image-manager.h"
 
 #include <exception>
-#include <filesystem>
+#include <string>
 
 using namespace filesystem;
 
@@ -20,9 +20,13 @@ bool load_image(const string &image_path, Image& current_image) {
 
 }
 
-bool save_image(Image& current_image, const string& image_name, const string& image_extention, const string& image_path) {
+bool save_image(Image& current_image, string& image_name, string& image_extention, string& image_path) {
 
     try {
+
+        if (!(image_path.back() == '/' || image_path.back() == '\\')) {
+            image_path.push_back('/');
+        }
 
         current_image.saveImage(image_path + image_name + image_extention);
         return true;

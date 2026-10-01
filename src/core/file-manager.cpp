@@ -9,7 +9,7 @@ string read_image_name() {
 
     string image_name = "";
 
-    cout << "Image name: ";
+    cout << "Image Name: ";
     getline(cin >> ws, image_name);
 
     return image_name;
