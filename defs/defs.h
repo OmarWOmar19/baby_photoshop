@@ -44,4 +44,13 @@ class Point {
             y = read_number(" --> y: ");
         }
 
+        Point(int point_x, int point_y) {
+            x = point_x;
+            y = point_y;
+        }
+
+        Point() {
+            x = 0, y = 0;
+        }
+
 };

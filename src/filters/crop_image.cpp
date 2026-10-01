@@ -6,39 +6,57 @@
 
 using namespace std;
 
-Point read_starting_point() {
+Point read_starting_point(const int max_width, const int max_height) {
 
     Point starting_point;
 
-    cout << " Starting Point (x, y):\n";
+    do {
 
-    starting_point.read_x();
-    starting_point.read_y();
+        cout << " Starting Point (x, y):\n";
+
+        starting_point.read_x();
+        starting_point.read_y();
+
+        if ((starting_point.x >= max_width) || (starting_point.y >= max_height)) {
+            cout << "\nError: Starting point is out of range!!!\n";
+        }
+
+    } while ((starting_point.x >= max_width) || (starting_point.y >= max_height));
 
     return starting_point;
 
 }
 
-Point read_ending_point() {
+Point read_ending_point(const int max_width, const int max_height) {
 
     Point ending_point;
 
-    cout << " Destination Point (x, y):\n";
+    do {
 
-    ending_point.read_x();
-    ending_point.read_y();
+        cout << " Destination Point (x, y):\n";
+
+        ending_point.read_x();
+        ending_point.read_y();
+
+        if ((ending_point.x >= max_width) || (ending_point.y >= max_height)) {
+            cout << "\nError: Starting point is out of range!!!\n";
+        }
+
+    } while ((ending_point.x >= max_width) || (ending_point.y >= max_height));
 
     return ending_point;
 
 }
 
-void crop_image(Image &current_image) {
 
-    Point starting_point = read_starting_point(), ending_point = read_ending_point();
+void crop_image(Image &current_image) {
 
     cout << "========================================================\n";
     cout << "\t\t\tCrop Image\n";
     cout << "========================================================\n";
+
+    Point starting_point = read_starting_point(current_image.width, current_image.height);
+    Point ending_point = read_ending_point(current_image.width, current_image.height);
 
     Image resulted_image(ending_point.x - starting_point.x, ending_point.y - starting_point.y);
 
