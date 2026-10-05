@@ -57,7 +57,7 @@ void flip_image(Image& current_image) {
 
     show_flip_image_menu();
 
-    short choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
+    short choice = read_choice("Enter a choice: ", "Error: Invalid choice!!!\nPlease enter a valied choice [1-2]!!!", 1, 2);
 
     switch (choice) {
 

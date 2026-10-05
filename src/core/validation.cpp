@@ -2,6 +2,7 @@
 #include <limits>
 
 #include "../../include/core/validation.h"
+#include "../../include/ui/output.h"
 
 using namespace std;
 
@@ -17,8 +18,7 @@ int read_number(const string& prompt) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-        cout << "\nError: Invalied input!!!";
-        cout << "\nPlease Enter a numeric value!!!\n";
+        show_error_message("Error: Invalid input!!!\nPlease Enter a numeric value!!!");
 
         cout << endl;
 
@@ -40,7 +40,7 @@ int read_choice(const string& prompt, const string& error_message, int from, int
         choice = read_number(prompt);
 
         if (!(choice >= from && choice <= to)) {
-            cout << error_message << endl;
+            show_error_message(error_message);
         }
 
     } while (!(choice >= from && choice <= to));

@@ -19,7 +19,7 @@ void show_save_image_menu(Image& current_image) {
 
     // Check if there isn't an uploaded image yet
     if (is_image_loaded == false) {
-        cout << "Error: Image isn't loaded!!!\n";
+        show_error_message("Error: Image isn't loaded!!!");
         return;
     }
 
@@ -37,7 +37,7 @@ void show_save_image_menu(Image& current_image) {
         cout << "Image has successfully been saved!!!\n";
     } else {
         is_image_saved = false;
-        cout << "Error: Image hasn't been saved!!!\n";
+        show_error_message("Error: Image hasn't been saved!!!");
     }
 
 }
@@ -153,7 +153,7 @@ void show_apply_filter_menu(Image& current_image) {
 
     // Check if there isn't an uploaded image yet
     if (is_image_loaded == false) {
-        cout << "Error: Image isn't loaded!!!\n";
+        show_error_message("Error: Image isn't loaded!!!");
         system("pause");
         return;
     }
@@ -188,7 +188,7 @@ void show_apply_filter_menu(Image& current_image) {
         cout << " [19] Exit" << "\n";
         cout << "========================================================\n";
 
-        choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-19]!!!\n", 1, 19);
+        choice = read_choice("Enter a choice: ", "Error: Invalid choice!!!\nPlease enter a valied choice [1-19]!!!", 1, 19);
 
         perform_apply_filter_menu_choice((en_filters_menu)choice, current_image);
 
@@ -221,7 +221,7 @@ void show_load_image_screen(Image& current_image) {
             } else {
                 is_image_saved = false;
                 system("cls");
-                cout << "Error: Image hasn't been saved!!!\n";
+                show_error_message("Error: Image hasn't been saved!!!");
             }
 
         }
@@ -296,7 +296,7 @@ void show_main_menu() {
         cout << "========================================================\n";
 
         // Read user choice for main menu
-        choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-4]!!!\n", 1, 4);
+        choice = read_choice("Enter a choice: ", "\nError: Invalid choice!!!\nPlease enter a valied choice [1-4]!!!\n", 1, 4);
 
         perform_main_menu_choice((en_main_menu)choice, current_image);
 

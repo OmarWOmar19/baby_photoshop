@@ -19,7 +19,7 @@ void darken_and_lighten(Image& current_image) {
 
     show_darken_and_lighten_menu();
 
-    short choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
+    short choice = read_choice("Enter a choice: ", "Error: Invalid choice!!!\nPlease enter a valied choice [1-2]!!!", 1, 2);
     short brightness_percentage = 0;
 
     switch (choice) {

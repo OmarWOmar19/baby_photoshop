@@ -18,7 +18,7 @@ Point read_starting_point(const int max_width, const int max_height) {
         starting_point.read_y();
 
         if ((starting_point.x >= max_width) || (starting_point.y >= max_height)) {
-            cout << "\nError: Starting point is out of range!!!\n";
+            show_error_message("Error: Starting point is out of range!!!");
         }
 
     } while ((starting_point.x >= max_width) || (starting_point.y >= max_height));
@@ -39,7 +39,7 @@ Point read_ending_point(const int max_width, const int max_height) {
         ending_point.read_y();
 
         if ((ending_point.x >= max_width) || (ending_point.y >= max_height)) {
-            cout << "\nError: Starting point is out of range!!!\n";
+            show_error_message("Error: Ending point is out of range!!!");
         }
 
     } while ((ending_point.x >= max_width) || (ending_point.y >= max_height));

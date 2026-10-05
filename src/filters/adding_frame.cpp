@@ -57,7 +57,7 @@ void adding_frame(Image& current_image){
 
     show_adding_frame_choices();
 
-    int choice = read_choice("Enter a choice: ", "\nError: Invalied choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
+    int choice = read_choice("Enter a choice: ", "Error: Invalid choice!!!\nPlease enter a valied choice [1-2]!!!\n", 1, 2);
 
     system("cls");
 
