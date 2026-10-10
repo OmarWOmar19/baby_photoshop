@@ -37,6 +37,12 @@ void show_resize_image_menu(Image& current_image) {
 
     int new_width = read_number(" --> New Width: "), new_height = read_number(" --> New Height: ");
 
+    while (new_width <= 0 || new_height <= 0) {
+        cout << "Invalid dimensions! Width and Height must be greater than 0.\n";
+        new_width = read_number(" --> New Width: ");
+        new_height = read_number(" --> New Height: ");
+    }
+
     resize_image(current_image, new_width, new_height);
 
     successful_filter_message();
