@@ -59,6 +59,11 @@ void blur_image(Image& current_image) {
 
     int radius = read_number("Enter blur radius: ");
 
+    while (radius <= 0) {
+        cout << "Invalid radius! Please enter a positive number greater than 0.\n";
+        radius = read_number("Enter blur radius: ");
+    }
+
     vertical_blur(current_image, radius);
     horizontal_blur(current_image, radius);
 
