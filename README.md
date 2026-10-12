@@ -1,7 +1,7 @@
 # Baby Photoshop
 
 File        :  CS213_A1_Part2_S11_S12_20250114_20250315_20250444_20250503.cpp\
-Course      :  CS213 - Assignment 1 (Part 1 - 8 filters)
+Course      :  CS213 - Assignment 1 (Part 2 - 16 filters)
 
 Baby Photoshop is a console application (no GUI) for basic image editing, built for CS213 Assignment 1. It uses the provided `Image_Class.h` library to read, modify and write images, and everything is driven by text menus.
 
