@@ -18,7 +18,16 @@ void rotate_image(Image& current_image) {
 
     show_rotate_image_menu();
 
-    short angle = read_number("Enter an angle: ");
+    short angle = 0;
+    short angle_choice = read_choice("Enter a choice: ", "Error: Invalid choice!!!\nPlease enter a valied choice [1-3]", 1, 3);
+
+    switch (angle_choice) {
+        case 1: angle = 90; break;
+        case 2: angle = 180; break;
+        case 3: angle = 270; break;
+        default: 
+        ;
+    }
 
     if (angle == 0 || angle == 360) {
         return; 
